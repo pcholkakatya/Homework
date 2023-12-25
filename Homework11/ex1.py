@@ -5,10 +5,10 @@ class Publication:
         self.year = year
         self.publishing_house = publishing_house
     def main(self):
-        print(self.publishing_house)
+        print(f'Издательство: {self.publishing_house}')
     def display(self):
-        print(self.title, self.author, self.year)
-
+        print(f'Название: {self.title}\nАвтор: {self.author}\nГод выпуска: {self.year}')
+              
 class Book(Publication):
     def __init__(self, title, author, year, publishing_house, isbn):
         super().__init__(title, author, year, publishing_house)
@@ -17,7 +17,7 @@ class Book(Publication):
         super().main()
     def display(self):
         super().display()
-        print(self.isbn)   
+        print(f'ISBN: {self.isbn}')   
 
 class Magazine(Publication):
     def __init__(self, title, author, year, publishing_house, issue_number):
@@ -27,14 +27,11 @@ class Magazine(Publication):
         super().main()
     def display(self):
         super().display()
-        print(self.issue_number)   
+        print(f'Номер выпуска: {self.issue_number}')   
     
-warcraft = Publication('Rise of the Horde', 'Christie Golden', 2006, 'АСТ')
+warcraft = Book('Rise of the Horde', 'Christie Golden', 2006, 'ACT', 9780989700139)
 warcraft.main()
 warcraft.display()
-warcraft = Book('Rise of the Horde', 'Christie Golden', 2006, 'АСТ', 'isbn')
-warcraft.main()
-warcraft.display()
-warcraft = Magazine('Rise of the Horde', 'Christie Golden', 2006, 'АСТ', 30)
+warcraft = Magazine('Scooby-Doo', 'Mark Evanier', 1969, 'Gold Key Comics', 10)
 warcraft.main()
 warcraft.display()
